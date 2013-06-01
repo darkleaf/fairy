@@ -1,5 +1,10 @@
 require "fairy/version"
 
+#TODO: fix me
+require 'eventmachine'
+require 'em-websocket'
+
 module Fairy
-  # Your code goes here...
+  autoload :Server, 'fairy/server'
+  autoload :Connection, 'fairy/connection'
 end
