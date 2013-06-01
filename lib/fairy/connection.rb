@@ -1,13 +1,9 @@
 module Fairy
   class Connection < EventMachine::Connection
-    attr_accessor :server
+    attr_accessor :channel
 
-    def receive_data(data)
-      p data
-    end
-
-    def unbind
-      server.connections.delete(self)
+    def receive_data(msg)
+      channel.push msg
     end
   end
 end
